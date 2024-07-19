@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+     <LinearLayout
+        android:id="@+id/ELMO_uberschrift_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#4CAF50"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/APP_uberschrift"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ELMO"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Mitte_linar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ELMO_uberschrift_LinearLayout"
+        app:layout_constraintBottom_toTopOf="@id/TouchBar_Linear_Layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#F5F5DC"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hallo [Vorname]!"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="24dp"
+                tools:layout_editor_absoluteY="73dp">
+
+                <FrameLayout
+                    android:id="@+id/recipe_add"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/white"
+                    android:elevation="4dp"
+                    android:onClick="addRecipe"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.45">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center|bottom"
+                        android:padding="8dp"
+                        android:text="Rezept hinzufügen" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/all_recipes"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/white"
+                    android:elevation="4dp"
+                    android:onClick="showAllRecipes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.45">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="52dp"
+                        android:layout_gravity="center|bottom"
+                        android:padding="8dp"
+                        android:text="Alle Rezepte" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/category1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/white"
+                    android:elevation="4dp"
+                    android:onClick="showCategory1"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recipe_add"
+                    app:layout_constraintWidth_percent="0.45">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="Hauptspeise" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/category2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/white"
+                    android:elevation="4dp"
+                    android:onClick="showCategory2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintTop_toBottomOf="@id/all_recipes"
+                    app:layout_constraintWidth_percent="0.45">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="Dessert" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/category3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/white"
+                    android:elevation="4dp"
+                    android:onClick="showCategory3"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/category1"
+                    app:layout_constraintWidth_percent="0.45">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="Vorspeise" />
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/TouchBar_Linear_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#4CAF50"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/Home_Button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:visibility="invisible"
+            android:contentDescription="Home"
+            app:icon="@drawable/home"
+            app:iconGravity="textStart"
+            app:iconSize="28dp"
+            app:iconTint="#000000"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/Fotos_Button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:visibility="visible"
+            android:contentDescription="Fotos"
+            app:icon="@drawable/fotos"
+            app:iconGravity="textStart"
+            app:iconSize="30dp"
+            app:iconTint="#000000"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/Suche_Button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:hapticFeedbackEnabled="true"
+            android:visibility="visible"
+            android:contentDescription="Suche"
+            app:icon="@drawable/suche"
+            app:iconGravity="textStart"
+            app:iconSize="28dp"
+            app:iconTint="#000000"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/Profil_Button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:visibility="visible"
+            android:contentDescription="Profil"
+            app:icon="@drawable/profil"
+            app:iconGravity="textStart"
+            app:iconSize="21dp"
+            app:iconTint="#040000"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
